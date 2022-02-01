@@ -2,7 +2,7 @@ import React from 'react';
 
 const Content = () => {
 	return (
-		<main>
+		<main className='Content'>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit.
 			Necessitatibus iste placeat similique enim, dolores praesentium ut
 			accusantium maiores dicta veniam ipsum laborum totam quo provident
