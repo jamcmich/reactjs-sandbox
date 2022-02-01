@@ -34,6 +34,28 @@ code {
   margin: 2vw auto;
 }
 
+.Content p {
+  margin: 2vw auto;
+}
+
+.Content--button {
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  color: white;
+  background-color: royalblue;
+  border: none;
+}
+
+.Content--double-click {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  color: royalblue;
+  padding: 2vw auto;
+  line-height: 4vw;
+  cursor: pointer;
+}
+
 .Footer p {
   font-weight: 600;
 }
