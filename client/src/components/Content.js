@@ -1,22 +1,27 @@
-import React from 'react';
+import { React, useState } from 'react';
 
 const Content = () => {
+	const [count, setCount] = useState(0);
+
 	const handleClick = () => {
 		console.log('You clicked button 1.');
+		setCount(count + 1);
 	};
 
 	const handleClick2 = (button) => {
 		console.log(`You clicked ${button}.`);
+		setCount(count + 1);
 	};
 
 	const handleClick3 = (e) => {
 		console.log(`You clicked ${e.target.innerText}.`);
+		setCount(count + 1);
 	};
 
-	var count = 0;
+	var i = 0;
 	const counter = () => {
-		count += 2;
-		console.log(`You've clicked me ${count} times!`);
+		i += 2;
+		console.log(`You've clicked me ${i} times!`);
 	};
 
 	return (
@@ -49,6 +54,8 @@ const Content = () => {
 			<p className='Content--double-click' onDoubleClick={counter}>
 				Double Click Me!
 			</p>
+
+			<h3>Buttons clicked {count} times.</h3>
 		</main>
 	);
 };
