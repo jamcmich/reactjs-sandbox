@@ -21,7 +21,7 @@ const Content = () => {
 	var i = 0;
 	const counter = () => {
 		i += 2;
-		console.log(`You've clicked me ${i} times!`);
+		alert(`You've clicked me ${i} times!`);
 	};
 
 	return (
@@ -33,25 +33,25 @@ const Content = () => {
 				provident in voluptas quas repellat soluta?
 			</p>
 
-			<button className='Content--button' onClick={handleClick}>
+			<button className='button' onClick={handleClick}>
 				Button 1
 			</button>
 
 			<button
-				className='Content--button'
+				className='button'
 				onClick={() => handleClick2('button 2')}
 			>
 				Button 2
 			</button>
 
 			<button
-				className='Content--button'
+				className='button'
 				onClick={(e) => handleClick3(e)}
 			>
 				Click Me!
 			</button>
 
-			<p className='Content--double-click' onDoubleClick={counter}>
+			<p className='double-click' onDoubleClick={counter}>
 				Double Click Me!
 			</p>
 

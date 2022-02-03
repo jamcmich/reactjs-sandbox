@@ -22,14 +22,17 @@ code {
     monospace;
 }
 
+/* App Component */
 .App {
   margin: 2vw 4vw;
 }
 
+/* Header Component */
 .Header { 
   color: royalblue;
 }
 
+/* Content Component */
 .Content {
   margin: 2vw auto;
 }
@@ -38,7 +41,7 @@ code {
   margin: 2vw auto;
 }
 
-.Content--button {
+.Content .button {
   padding: 1vw 2vw;
   font-size: 2vw;
   color: white;
@@ -46,7 +49,7 @@ code {
   border: none;
 }
 
-.Content--double-click {
+.Content .double-click {
   display: inline-block;
   width: 20%;
   text-align: center;
@@ -56,6 +59,70 @@ code {
   cursor: pointer;
 }
 
+/* Footer Component */
 .Footer p {
   font-weight: 600;
+}
+
+/* ListsKeys Component */
+.ListsKeys {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.ListsKeys ul {
+  list-style-type: none;
+  width: 60%;
+  text-align: left;
+  padding: 0 10vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.ListsKeys .list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 1vw 2vw;
+}
+
+.ListsKeys .list-item input[type="checkbox"] {
+  appearance: none;
+  background-color: white;
+  margin: 0;
+  font: inherit;
+  color: black;
+  width: 5vw;
+  height: 5vw;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.ListsKeys .list-item input[type="checkbox"]:checked {
+  background-color: lightgreen;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjAuMjg1IDJsLTExLjI4NSAxMS41NjctNS4yODYtNS4wMTEtMy43MTQgMy43MTYgOSA4LjcyOCAxNS0xNS4yODV6Ii8+PC9zdmc+");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  background-origin: content-box;
+}
+
+.ListsKeys .list-item label {
+  width: 50%;
+  padding: 2vw;
+}
+
+.ListsKeys .icon-trash {
+  float: right;
+  color: royalblue;
+  font-size: 4vw;
+}
+
+.ListsKeys .icon-trash:hover {
+  color: red;
 }
