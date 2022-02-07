@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 
-const Content = () => {
+const StateContent = () => {
 	const [count, setCount] = useState(0);
 
 	const handleClick = () => {
@@ -60,4 +60,4 @@ const Content = () => {
 	);
 };
 
-export default Content;
+export default StateContent;
