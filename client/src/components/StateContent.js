@@ -25,7 +25,7 @@ const StateContent = () => {
 	};
 
 	return (
-		<main className='Content'>
+		<main className='StateContent'>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				Necessitatibus iste placeat similique enim, dolores praesentium

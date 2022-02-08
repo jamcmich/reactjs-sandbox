@@ -1,6 +1,8 @@
 import Header from './Header.js';
-import Content from './StateContent.js';
+import StateContent from './StateContent.js';
+import ListContent from './ListContent.js';
+import AddItem from './AddItem.js';
+import SearchItem from './SearchItem.js';
 import Footer from './Footer.js';
-import ListsKeys from './ListContent.js';
 
-export { Header, Content, Footer, ListsKeys };
+export { Header, StateContent, ListContent, AddItem, SearchItem, Footer };

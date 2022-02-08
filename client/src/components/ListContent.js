@@ -3,7 +3,7 @@ import ItemList from './ItemList';
 
 const ListContent = ({ items, handleCheck, handleDelete }) => {
 	return (
-		<main className='ListsKeys'>
+		<main className='ListContent'>
 			{items.length ? (
 				<ItemList
 					items={items}

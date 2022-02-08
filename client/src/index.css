@@ -38,16 +38,16 @@ code {
   height: 10vw;
 }
 
-/* Content Component */
-.Content {
+/* StateContent Component */
+.StateContent {
   margin: 2vw auto;
 }
 
-.Content p {
+.StateContent p {
   margin: 2vw auto;
 }
 
-.Content .button {
+.StateContent .button {
   padding: 1vw 2vw;
   font-size: 2vw;
   color: white;
@@ -55,7 +55,7 @@ code {
   border: none;
 }
 
-.Content .double-click {
+.StateContent .double-click {
   display: inline-block;
   width: 20%;
   text-align: center;
@@ -65,20 +65,15 @@ code {
   cursor: pointer;
 }
 
-/* Footer Component */
-.Footer p {
-  font-weight: 600;
-}
-
-/* ListsKeys Component */
-.ListsKeys {
+/* ListContent Component */
+.ListContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.ListsKeys ul {
+.ListContent ul {
   list-style-type: none;
   width: 60%;
   text-align: left;
@@ -87,7 +82,7 @@ code {
   flex-direction: column;
 }
 
-.ListsKeys .list-item {
+.ListContent .list-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -96,7 +91,7 @@ code {
   padding: 1vw 2vw;
 }
 
-.ListsKeys .list-item input[type="checkbox"] {
+.ListContent .list-item input[type="checkbox"] {
   appearance: none;
   background-color: white;
   margin: 0;
@@ -108,7 +103,7 @@ code {
   border-radius: 3px;
 }
 
-.ListsKeys .list-item input[type="checkbox"]:checked {
+.ListContent .list-item input[type="checkbox"]:checked {
   background-color: lightgreen;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjAuMjg1IDJsLTExLjI4NSAxMS41NjctNS4yODYtNS4wMTEtMy43MTQgMy43MTYgOSA4LjcyOCAxNS0xNS4yODV6Ii8+PC9zdmc+");
   background-repeat: no-repeat;
@@ -117,17 +112,83 @@ code {
   background-origin: content-box;
 }
 
-.ListsKeys .list-item label {
+.ListContent .list-item label {
   width: 50%;
   padding: 2vw;
 }
 
-.ListsKeys .icon-trash {
+.ListContent .icon-trash {
   float: right;
   color: royalblue;
   font-size: 4vw;
 }
 
-.ListsKeys .icon-trash:hover {
+.ListContent .icon-trash:hover {
   color: red;
+}
+
+/* AddItem Component */
+.AddItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 4vw 0;
+}
+
+.AddItem .form-additem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.AddItem label, .AddItem input {
+  padding: 1vw 2vw;
+}
+
+.AddItem button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: royalblue;
+  color: white;
+  border: 2px solid royalblue;
+  border-radius: 0 5px 5px 0;
+  padding: 1vw;
+}
+
+.AddItem button:hover {
+  background-color: green;
+  border-color: green;
+}
+
+.AddItem input {
+  border: 2px solid royalblue;
+  border-radius: 5px 0 0 5px;
+}
+
+/* SearchItem Component */
+.SearchItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 4vw 0;
+}
+
+.SearchItem label, .SearchItem input {
+  padding: 1vw 2vw;
+}
+
+.SearchItem input {
+  border: 2px solid royalblue;
+  border-radius: 5px;
+}
+
+/* Footer Component */
+.Footer p {
+  font-weight: 600;
+  text-align: center;
+  margin: 4vw 0;
 }
