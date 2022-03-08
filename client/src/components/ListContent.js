@@ -3,7 +3,7 @@ import ItemList from './ItemList';
 
 const ListContent = ({ items, handleCheck, handleDelete }) => {
 	return (
-		<main className='ListContent'>
+		<div className='ListContent'>
 			{items.length ? (
 				<ItemList
 					items={items}
@@ -13,7 +13,7 @@ const ListContent = ({ items, handleCheck, handleDelete }) => {
 			) : (
 				<p style={{ marginTop: '2rem' }}>Your list is empty.</p>
 			)}
-		</main>
+		</div>
 	);
 };
 
