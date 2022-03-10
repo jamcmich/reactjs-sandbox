@@ -5,6 +5,7 @@ import {
 	ListContent,
 	AddItem,
 	SearchItem,
+	APIRequest,
 	Footer,
 } from './components/Components.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -22,7 +23,7 @@ function App() {
 		const fetchItems = async () => {
 			try {
 				const response = await fetch(API_URL);
-				if (!response.ok) throw Error("Did not receive expected data.");
+				if (!response.ok) throw Error('Did not receive expected data.');
 				const listItems = await response.json();
 				setItems(listItems);
 				setFetchError(null);
@@ -31,7 +32,7 @@ function App() {
 			} finally {
 				setIsLoading(false);
 			}
-		}
+		};
 
 		// to simulate API response time
 		setTimeout(() => {
@@ -39,23 +40,50 @@ function App() {
 		}, 2000);
 	}, []);
 
-	const addItem = (description) => {
+	const addItem = async (description) => {
 		const id = items.length ? items[items.length - 1].id + 1 : 1;
 		const createNewItem = { id, checked: false, description };
 		const listItems = [...items, createNewItem];
 		setItems(listItems);
+
+		const postOptions = {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(createNewItem),
+		};
+		const result = await APIRequest(API_URL, postOptions);
+		if (result) setFetchError(result);
 	};
 
-	const handleCheck = (id) => {
+	const handleCheck = async (id) => {
 		const listItems = items.map((item) =>
 			item.id === id ? { ...item, checked: !item.checked } : item
 		);
 		setItems(listItems);
+
+		const myItem = listItems.filter((item) => item.id === id);
+		const updateOptions = {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ checked: myItem[0].checked }),
+		};
+		const reqURL = `${API_URL}/${id}`;
+		const result = await APIRequest(reqURL, updateOptions);
+		if (result) setFetchError(result);
 	};
 
-	const handleDelete = (id) => {
+	const handleDelete = async (id) => {
 		const listItems = items.filter((item) => item.id !== id);
 		setItems(listItems);
+
+		const deleteOptions = { method: 'DELETE' };
+		const reqURL = `${API_URL}/${id}`;
+		const result = await APIRequest(reqURL, deleteOptions);
+		if (result) setFetchError(result);
 	};
 
 	const handleSubmit = (e) => {
@@ -90,9 +118,29 @@ function App() {
 							/>
 							<SearchItem search={search} setSearch={setSearch} />
 							<main>
-								{isLoading && <p style={{ color: "red", display: "flex", alignItems: "center", justifyContent: "center" }}>Loading items...</p>}
-								{fetchError && <p style={{ color: "red", display: "flex", alignItems: "center", justifyContent: "center" }}>{`Error: ${fetchError}`}</p>}
-								{!fetchError && !isLoading &&
+								{isLoading && (
+									<p
+										style={{
+											color: 'red',
+											display: 'flex',
+											alignItems: 'center',
+											justifyContent: 'center',
+										}}
+									>
+										Loading items...
+									</p>
+								)}
+								{fetchError && (
+									<p
+										style={{
+											color: 'red',
+											display: 'flex',
+											alignItems: 'center',
+											justifyContent: 'center',
+										}}
+									>{`Error: ${fetchError}`}</p>
+								)}
+								{!fetchError && !isLoading && (
 									<ListContent
 										items={items.filter((item) =>
 											item.description
@@ -102,7 +150,7 @@ function App() {
 										handleCheck={handleCheck}
 										handleDelete={handleDelete}
 									/>
-								}
+								)}
 							</main>
 							<Footer length={items.length} />
 						</div>
